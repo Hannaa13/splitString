@@ -7,7 +7,9 @@ public class CountMap {
     String[] arr;
 
     public HashMap<String, Integer> count(String text) {
+        text = text.replaceAll("([a-z]+)[!,.?:;]*", "$1");
         arr = text.split(" ");
+
         HashMap<String, Integer> map = new HashMap<>();
                 for (String str : arr) {
                 if (map.containsKey(str)) {
@@ -20,8 +22,6 @@ public class CountMap {
             }
 
             return map;
-
     }
-
 
 }
